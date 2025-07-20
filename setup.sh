@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# Check if iVentoy is installed in /lib and not compressed
-if [ ! -d /lib/iventoy* ] || [ -f /lib/iventoy*.tar.gz ]; then
-    echo "Error: iVentoy is not properly installed in /lib. Please download and unpack iVentoy first."
+# Check if iVentoy is installed in /lib or /usr/lib and not compressed
+if { [ ! -d /lib/iventoy* ] && [ ! -d /usr/lib/iventoy* ]; } || { [ -f /lib/iventoy*.tar.gz ] || [ -f /usr/lib/iventoy*.tar.gz ]; }; then
+    echo "Error: iVentoy is not properly installed in /lib or /usr/lib. Please download and unpack iVentoy first."
     echo "Make sure the iVentoy folder is uncompressed and not a .tar.gz file."
     exit 1
 fi
 
 # Find the iVentoy directory (excluding .tar.gz files)
-IVENTOY_DIR=$(find /lib -maxdepth 1 -type d -name "iventoy*" ! -name "*.tar.gz" | sort -V | tail -n 1)
+IVENTOY_DIR=$(find /lib /usr/lib -maxdepth 1 -type d -name "iventoy*" ! -name "*.tar.gz" | sort -V | tail -n 1)
 
 if [ -z "$IVENTOY_DIR" ]; then
-    echo "Error: Could not find an uncompressed iVentoy directory in /lib."
+    echo "Error: Could not find an uncompressed iVentoy directory in /lib or /usr/lib."
     exit 1
 fi
 
