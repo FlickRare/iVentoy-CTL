@@ -5,18 +5,18 @@ This repository contains scripts and a systemd service file to manage iVentoy as
 ## Prerequisites:
 
 1. A host running a Linux distribution with systemd.
-2. iVentoy downloaded and properly extracted in the `/opt` directory (e.g., `/opt/iventoy-1.0.21`).
+2. iVentoy downloaded and properly extracted in the `/lib` directory (e.g., `/lib/iventoy-1.0.21`).
 3. Sudo or root access to run the setup script.
 
 ## Quick Start
 
 1. Download and extract iVentoy:
    - Download the latest version of iVentoy from the official website.
-   - Extract the downloaded .tar.gz file in the `/opt` directory:
+   - Extract the downloaded .tar.gz file in the `/lib` directory:
      ```bash
-     sudo tar -xzvf iventoy-x.x.x-linux.tar.gz -C /opt
+     sudo tar -xzvf iventoy-x.x.x-linux.tar.gz -C /lib
      ```
-   - Ensure that the extracted folder is named like `iventoy-x.x.x` in `/opt`.
+   - Ensure that the extracted folder is named like `iventoy-x.x.x` in `/lib`.
 
 2. Clone this repository:
    ```bash

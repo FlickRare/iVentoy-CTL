@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash "/opt/iventoy/iventoy.sh" start
-ExecStop=/bin/bash "/opt/iventoy/iventoy.sh" stop
+ExecStart=/bin/bash "/lib/iventoy/iventoy.sh" start
+ExecStop=/bin/bash "/lib/iventoy/iventoy.sh" stop
 Restart=always
 RestartSec=10
 
